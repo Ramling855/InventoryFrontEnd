@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
 import { useSelector,useDispatch } from "react-redux";
-import { decrement, increment, incrementByAmount,change,ptm } from "./reducers/Dataslice";
+import { ptm } from "./reducers/Dataslice";
 
 import { useState } from "react";
 

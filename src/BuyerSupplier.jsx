@@ -33,13 +33,11 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 export default function BuyerSupplier() {
   const [rows, setRows] = useState([]);
-  const [flag, setFlag] = useState(false);
 
   const onDeleteHandle = async (i) => {
     await axios
       .delete(`https://ramlinginventory.herokuapp.com/company/delete/${i}`)
       .then((res) => {
-        setFlag(true);
         alert("Record Deleted Sucesfully.");
       })
       .catch((err) => {

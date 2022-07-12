@@ -5,8 +5,6 @@ import jwt_decode from "jwt-decode";
 import PaymentModal from "./PaymentModal";
 import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
-import TextField from "@mui/material/TextField";
-import Box from "@mui/material/Box";
 import { useSelector } from "react-redux";
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
@@ -16,12 +14,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import Stack from "@mui/material/Stack";
-import Pagination from "@mui/material/Pagination";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -44,12 +36,9 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 export default function Payment() {
-  const num = useSelector((state) => state.Data);
+  // const num = useSelector((state) => state.Data);
   const [rows, setRows] = useState([]);
   const [key, setKey] = useState(1);
-  const [payment, setPayment] = useState("Pending");
-  const [mail, setMail] = useState("Pending");
-  var [total, setTotal] = useState();
 
   const pay = useSelector((state) => state.Data.pay);
 
@@ -64,16 +53,16 @@ export default function Payment() {
   var decoded = jwt_decode(token);
   var tokenData = decoded.result;
 
-  useEffect(() => {
-    axios
-      .get(`https://ramlinginventory.herokuapp.com/userOrder?email=${tokenData.email}`)
-      .then((res) => {
-        setRows(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://ramlinginventory.herokuapp.com/userOrder?email=${tokenData.email}`)
+  //     .then((res) => {
+  //       setRows(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  //       },[]);
 
   useEffect(() => {
     axios
@@ -84,7 +73,7 @@ export default function Payment() {
       .catch((err) => {
         console.log(err);
       });
-  }, [key]);
+  });
 
 
   const Delete = (e) => {

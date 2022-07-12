@@ -1,14 +1,14 @@
 import { Button, Modal } from "antd";
 
-import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment, incrementByAmount } from "./reducers/Dataslice";
+import {  useDispatch } from "react-redux";
+import {  increment,  } from "./reducers/Dataslice";
 import axios from "axios";
 import { Form, Input, Select } from "antd";
 import { useState, useEffect } from "react";
-import "antd/dist/antd.css";
+
+import 'antd/dist/antd.min.css';
 import EditIcon from "@mui/icons-material/Edit";
 
-import TextField from "@mui/material/TextField";
 import { useNavigate } from "react-router-dom";
 
 const { Option } = Select;

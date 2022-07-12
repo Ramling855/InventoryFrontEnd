@@ -2,12 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 
-import PaymentModal from "./PaymentModal";
 import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
-import TextField from "@mui/material/TextField";
-import Box from "@mui/material/Box";
-import { useSelector } from "react-redux";
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -16,12 +12,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import Stack from "@mui/material/Stack";
-import Pagination from "@mui/material/Pagination";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -44,11 +34,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 export default function AdminHistory() {
-  const num = useSelector((state) => state.Data);
   const [rows, setRows] = useState([]);
-  const [key, setKey] = useState(1);
-  const [payment, setPayment] = useState("Pending");
-  const [mail, setMail] = useState("Pending");
 
   // const tokenData = useSelector((state) => state.Data.token);
 

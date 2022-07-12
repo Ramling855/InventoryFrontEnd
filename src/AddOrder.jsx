@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { styled } from "@mui/material/styles";
-import { Form, Input, Select } from "antd";
+import { Form, } from "antd";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
@@ -13,32 +13,14 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import { useSelector, useDispatch } from "react-redux";
-import {ptm, decrement, increment, incrementByAmount } from "./reducers/Dataslice";
-import TablePagination from "@mui/material/TablePagination";
+import {ptm } from "./reducers/Dataslice";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import AddBoxSharpIcon from "@mui/icons-material/AddCircleOutlineOutlined";
-import RemoveSharpIcon from "@mui/icons-material/RemoveCircleOutlineOutlined";
 import Pagination from "@mui/material/Pagination";
 
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
 import Divider from "@mui/material/Divider";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 // import { styled } from "@mui/material/styles";
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(2),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -61,12 +43,11 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 const AddOrder = () => {
   const [state, setState] = useState(1);
-  const [name, setName] = useState("");
+  const [name] = useState("");
   const [rows, setRows] = useState([]);
   const [flag, setFlag] = useState(false);
   const [key, setKey] = useState();
   const [sort, setSort] = useState(1);
-  const navigation = useNavigate();
   // const location = useLocation();
   // const userEmail = location.state;
   // console.log("User Email", userEmail);
@@ -85,18 +66,6 @@ const AddOrder = () => {
       });
   }, [flag]);
 
-  const increments = (row) => {
-    setState(state + 1);
-    // setState({
-    //   count: state.count + 1,
-    // });
-  };
-  const decrements = (row) => {
-    setState(state - 1);
-    // setState({
-    //   count: state.count - 1,
-    // });
-  };
 
   //qty textbox
   const onQtyChange = (e) => {

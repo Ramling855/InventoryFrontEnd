@@ -1,13 +1,9 @@
 import { Button, Modal } from "antd";
 import axios from "axios";
-import { Form, Input, Select } from "antd";
-import { useState, useEffect } from "react";
-import "antd/dist/antd.css";
-import EditIcon from "@mui/icons-material/Edit";
-
-import TextField from "@mui/material/TextField";
-
-const { Option } = Select;
+import { Form, Input,  } from "antd";
+import { useState,  } from "react";
+// import "antd/dist/antd.css";
+import 'antd/dist/antd.min.css';
 const layout = {
   labelCol: {
     span: 8,
@@ -53,16 +49,6 @@ const AddModalCom = () => {
       });
   };
 
-  const onReset = () => {
-    form.resetFields();
-  };
-
-  const onFill = () => {
-    form.setFieldsValue({
-      Quantity: "Add Quantity",
-      Catagory: "Add catagory",
-    });
-  };
 
   return (
     <>
@@ -134,12 +120,6 @@ const AddModalCom = () => {
           </Form.Item>
         </Form>
 
-        {/* 
-        <TextField id="standard-basic" label="Quantity" variant="standard" />
-
-        <TextField id="standard-basic" label="Catatgory" variant="standard" />
-
-        <TextField id="standard-basic" label="Price" variant="standard" /> */}
       </Modal>
     </>
   );

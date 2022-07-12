@@ -1,15 +1,12 @@
 import { Button, Modal } from "antd";
 
-import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment, incrementByAmount } from "./reducers/Dataslice";
+import { useDispatch } from "react-redux";
+import {  increment, } from "./reducers/Dataslice";
 import { Form, Input, Select } from "antd";
-import Divider from "@mui/material/Divider";
 import { useState, useEffect } from "react";
 import axios from "axios";
 // import "antd/dist/antd.css";
-import EditIcon from "@mui/icons-material/Edit";
 
-import TextField from "@mui/material/TextField";
 
 const { Option } = Select;
 const layout = {
@@ -73,16 +70,6 @@ const AddModal = () => {
       });
   };
 
-  const onReset = () => {
-    form.resetFields();
-  };
-
-  const onFill = () => {
-    form.setFieldsValue({
-      Quantity: "Add Quantity",
-      Catagory: "Add catagory",
-    });
-  };
 
   return (
     <>
@@ -187,12 +174,6 @@ const AddModal = () => {
           </Form.Item>
         </Form>
 
-        {/* 
-        <TextField id="standard-basic" label="Quantity" variant="standard" />
-
-        <TextField id="standard-basic" label="Catatgory" variant="standard" />
-
-        <TextField id="standard-basic" label="Price" variant="standard" /> */}
       </Modal>
     </>
   );

@@ -6,9 +6,7 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import AddModal from "./AddModal";
-import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 // import AddIcon from '@mui/icons-material/Add';
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
@@ -20,7 +18,6 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Divider } from "@mui/material";
-import TablePagination from "@mui/material/TablePagination";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -46,7 +43,6 @@ export default function Inventory() {
   const num = useSelector((state) => state.Data.value)
 
   const [rows, setRows] = useState([]);
-  const [flag, setFlag] = useState(false);
   const [key, setKey] = useState();
   const [sort, setSort] = useState(1);
   const [del,setDel]=useState(1);
@@ -70,7 +66,6 @@ export default function Inventory() {
       .delete(`https://ramlinginventory.herokuapp.com/delete/${i}`)
       .then((res) => {
         setDel(del+1)
-        setFlag(true);
         alert("Record Deleted Sucesfully.");
       })
       .catch((err) => {

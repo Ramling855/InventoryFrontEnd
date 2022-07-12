@@ -1,4 +1,4 @@
-import jwt_decode from "jwt-decode";
+// import jwt_decode from "jwt-decode";
 
 import { useSelector } from 'react-redux'
 // import Inventory from "./Inventory";
@@ -7,13 +7,12 @@ import Signin1 from "./Signin1";
 import Header1 from "./Header1";
 import Signup1 from "./Signup1";
 import AddMenu from "./AddMenu";
-import Payment from "./Payment";
-import BuyerSupplier from "./BuyerSupplier";
-import AddOrder from "./AddOrder";
+// import Payment from "./Payment";
+// import BuyerSupplier from "./BuyerSupplier";
+// import AddOrder from "./AddOrder";
 // import HomePage from "./HomePage"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./HomePage";
-import All from "./All";
+// import HomePage from "./HomePage";
 export default function App() {
 
 

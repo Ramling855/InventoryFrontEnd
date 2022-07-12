@@ -1,24 +1,15 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-
-import { useState } from 'react';
-
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { } from 'antd';
 
 
 import {
-    AutoComplete,
     Button,
-    Cascader,
     Checkbox,
-    Col,
     Form,
     Input,
-    InputNumber,
-    Row,
     Select 
   } from 'antd';
   const { Option } = Select;
@@ -85,7 +76,6 @@ import {
         });
     };
   
-    const [autoCompleteResult, setAutoCompleteResult] = useState([]);
   
     return (
         <div style={{backgroundColor:"GrayText",height:"1000px"}}>

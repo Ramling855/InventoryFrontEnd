@@ -1,13 +1,12 @@
 import * as React from "react";
 import AdminHome from "./AdminHome"
 import AdminHistory from "./AdminHistory"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
-import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment, incrementByAmount } from "./reducers/Dataslice";
+import {  useDispatch } from "react-redux";
+import { decrement, } from "./reducers/Dataslice";
 import jwt_decode from "jwt-decode";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import AddOrder from "./AddOrder";
 import Inventory from "./Inventory";
@@ -36,7 +35,6 @@ import MailIcon from "@mui/icons-material/Mail";
 import SvgIcon from "@mui/material/SvgIcon";
 
 import { pink } from "@mui/material/colors";
-import All from "./All";
 const drawerWidth = 240;
 
 function HomeIcon(props) {
@@ -133,16 +131,13 @@ export default function Header1() {
 
   var decoded = jwt_decode(token);
   var tokenData = decoded.result;
-  const [up, setUp] = useState();
   const dispatch = useDispatch();
   const [state, setState] = useState();
 
   useEffect(() => {
-    setUp(tokenData);
     setState(tokenData.role);
     dispatch(decrement(tokenData));
-  },[]
-  );
+  },[]);
 
   if (state === "admin") {
     // if(state == "admin"){

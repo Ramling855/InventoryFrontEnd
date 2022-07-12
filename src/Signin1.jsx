@@ -1,25 +1,20 @@
-import 'antd/dist/antd.css';
+
+import 'antd/dist/antd.min.css';
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment, incrementByAmount } from "./reducers/Dataslice";
+import {  useDispatch } from "react-redux";
+import {  incrementByAmount } from "./reducers/Dataslice";
 
 import { useNavigate } from "react-router-dom";
 
 import {
-    AutoComplete,
     Button,
-    Cascader,
     Checkbox,
-    Col,
     Form,
     Input,
-    InputNumber,
-    Row,
-    Select,
   } from 'antd';
-  import React, { useState } from 'react';
+  import React from 'react';
   const formItemLayout = {
     labelCol: {
       xs: {
@@ -77,7 +72,6 @@ import {
         });
     };
   
-    const [autoCompleteResult, setAutoCompleteResult] = useState([]);
   
     return (
         <div style={{backgroundColor:"GrayText",height:"1000px"}}>
